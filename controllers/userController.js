@@ -2,35 +2,21 @@
  * Created by dy on 2018/7/17.
  *
  */
-const {userModel,socialModel,query} = require('../models/index')
+const {userModel,socialModel,articleModel,tagModel,query} = require('../models/index')
 const {Op} = require('sequelize');
 
 class UserController {
     //测试model
     static async testModel(ctx) {
-        var params = ctx.request.query;
-        var age = parseInt(params.age);
         // console.log(params.age);
-        var data= await userModel.findAll({
-            where:{
-                age:{
-                    [Op.lt]:age
-                }
-            },
+        var data= await articleModel.findAll({
             include:{
-                model:socialModel,
-                as:'info'
+                model:tagModel,
+                as:'tag'
             }
         });
 
-        var count = await userModel.count({
-            where:{
-                age:{
-                    [Op.lt]:age
-                }
-            }
-        })
-        ctx.success({rows:data,count:count});
+        ctx.success(data);
     }
 
     //测试原生
