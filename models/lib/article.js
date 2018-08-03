@@ -16,19 +16,19 @@ module.exports = function (sequelize, DataTypes) {
         },
         title:{
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         content:{
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.TEXT,
+            allowNull: true
         },
         author:{
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
-        updatedate:{
+        create_time:{
             type: DataTypes.DATE,
-            allowNull: false
+            allowNull: true
         }
     },{
         freezeTableName: true,// Model 对应的表名将与model名相同

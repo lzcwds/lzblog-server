@@ -9,16 +9,17 @@ const convert = require('koa-convert');
 const json = require('koa-json');
 const onerror = require('koa-onerror');
 const cors =require('koa-cors');
-const bodyparser = require('koa-bodyparser')();
+const bodyparser = require('koa-bodyparser');
 const logger = require('koa-logger');
 const session = require('koa-session');
 const koaBody = require('koa-body');
 
-const  userRouter =require('./routes/user');
+const  userRouter =require('./routes/article');
 
 onerror(app);
 
-app.use(json())
+app.use(json());
+app.use(bodyparser());
 //跨域
 app.use(cors())
 // app.use(async (ctx, next) => {

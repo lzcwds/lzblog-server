@@ -12,11 +12,11 @@ module.exports = function (sequelize, DataTypes) {
         },
         name:{
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         description:{
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         }
     },{
         freezeTableName: true,// Model 对应的表名将与model名相同
