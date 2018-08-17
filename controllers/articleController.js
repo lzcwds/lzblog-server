@@ -10,12 +10,27 @@ class ArticleController {
     static async selectArticle(ctx) {
         let params = ctx.request.query;
         // console.log(params.age);
-        var data= await articleModel.findAll({
+        let data= await articleModel.findAll({
             include:{
                 model:tagModel,
                 as:'tag'
             }
         });
+
+        ctx.success(data);
+    }
+
+    static async getbyid(ctx){
+        let params = ctx.request.query;
+        let data = await articleModel.findAll({
+            where:{
+                id:params.id
+            },
+            include:{
+                model:tagModel,
+                as:'tag'
+            }
+        })
 
         ctx.success(data);
     }

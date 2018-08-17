@@ -1,1 +1,1 @@
-# lzblog-vue
+# lzblog-server

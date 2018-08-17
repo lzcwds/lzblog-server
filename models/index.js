@@ -19,9 +19,9 @@ var query =async (sql,params)=>{
 articleModel.belongsTo(tagModel,{as:'tag',foreignKey:'tag_id',targetKey:'id'});
 
 
-// init db
-tagModel.sync();
-articleModel.sync();
+// init db 首次运行自动生成数据库
+//tagModel.sync();
+//articleModel.sync();
 
 
 module.exports = {

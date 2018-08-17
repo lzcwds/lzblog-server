@@ -8,6 +8,6 @@ const ArticleController = require('../controllers/articleController');
 
 
 router
-    .get('/selectarticle',ArticleController.selectArticle)
-    .post('/addarticle',ArticleController.addArticle)
+    .get('/article/getlist',ArticleController.selectArticle)
+    .get('/article/getbyid',ArticleController.getbyid)
 module.exports = router;
